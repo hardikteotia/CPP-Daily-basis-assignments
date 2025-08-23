@@ -1,0 +1,447 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qc\ul\b\f0\fs24\lang9 Lab 2 Assignments\par
+\par
+
+\pard\sa200\sl276\slmult1\ulnone\b0 1. Write a program that accepts numbers continuously as long as the number is positive and prints the sum of the given numbers.\par
+#include <iostream>\par
+using namespace std;\par
+\par
+#include <iostream>\par
+using namespace std;\par
+\par
+int main() \{\par
+    int num, sum = 0;\par
+    while (true) \{\par
+        cout << "Enter the value: ";\par
+        cin >> num;\par
+        if (num <= 0) break;\par
+        sum += num;\par
+    \}\par
+    cout << "The sum is: " << sum;\par
+    return 0;\par
+\}\par
+\par
+2. Write a program to accept two integers x and n and compute x raised to n.\par
+\par
+#include <iostream>\par
+#include <cmath>\par
+using namespace std;\par
+\par
+int main() \{\par
+    int x, n;\par
+    cout << "Enter base and exponent: ";\par
+    cin >> x >> n;\par
+    cout << "The result is: " << pow(x, n);\par
+    return 0;\par
+\}\par
+\par
+3. Write a program to accept a character, an integer n and display the next n characters.\par
+\par
+#include <iostream>\par
+using namespace std;\par
+\par
+int main() \{\par
+    char ch;\par
+    int n;\par
+    cout << "Enter a character and a number: ";\par
+    cin >> ch >> n;\par
+    for (int i = 1; i <= n; i++) \{\par
+        cout << char(ch + i) << " ";\par
+    \}\par
+    return 0;\par
+\}\par
+\par
+4. Write a program to calculate factorial of a number. \par
+\par
+#include <iostream>\par
+using namespace std;\par
+\par
+int main() \{\par
+    int n;\par
+    cout << "Enter a number: ";\par
+    cin >> n;\par
+    long long fact = 1;\par
+    for (int i = 1; i <= n; i++) \{\par
+        fact *= i;\par
+    \}\par
+    cout << fact;\par
+    return 0;\par
+\}\par
+\par
+5. Write a program to calculate factors of a given number.\par
+\par
+#include <iostream>\par
+using namespace std;\par
+\par
+int main() \{\par
+    int n;\par
+    cout << "Enter a number: ";\par
+    cin >> n;\par
+    for (int i = 1; i <= n; i++) \{\par
+        if (n % i == 0) \{\par
+            cout << i << " ";\par
+        \}\par
+    \}\par
+    return 0;\par
+\}\par
+\par
+6. Accept two numbers and calculate GCD of them.\par
+#include <iostream>\par
+using namespace std;\par
+\par
+#include <iostream>\par
+using namespace std;\par
+\par
+int main() \{\par
+    int a, b;\par
+    cout << "Enter two numbers: ";\par
+    cin >> a >> b;\par
+    while (b != 0) \{\par
+        int temp = b;\par
+        b = a % b;\par
+        a = temp;\par
+    \}\par
+    cout << a;\par
+    return 0;\par
+\}\par
+\par
+7. Write a menu driven program to do following operations :\par
+a) Compute area of circle\par
+b) Compute area of rectangle\par
+c) Compute area of triangle\par
+d) Exit\par
+Display menu, ask choice to the user, depending on choice accept the parameters and perform the \par
+operation. Continue this process until user selects exit option.\par
+\par
+#include <iostream>\par
+using namespace std;\par
+\par
+int main() \{\par
+    int choice;\par
+    while (true) \{\par
+        cout << "1. Area of Circle\\n2. Area of Rectangle\\n3. Area of Triangle\\n4. Exit\\n";\par
+        cin >> choice;\par
+        if (choice == 1) \{\par
+            double r;\par
+            cout << "Enter radius: ";\par
+            cin >> r;\par
+            cout << 3.14159 * r * r << endl;\par
+        \} else if (choice == 2) \{\par
+            double l, w;\par
+            cout << "Enter length and width: ";\par
+            cin >> l >> w;\par
+            cout << l * w << endl;\par
+        \} else if (choice == 3) \{\par
+            double b, h;\par
+            cout << "Enter base and height: ";\par
+            cin >> b >> h;\par
+            cout << 0.5 * b * h << endl;\par
+        \} else if (choice == 4) \{\par
+            break;\par
+        \} else \{\par
+            cout << "Invalid choice\\n";\par
+        \}\par
+    \}\par
+    return 0;\par
+\}\par
+\par
+\fs22 8. Write a program to print all prime numbers between 1 to n.\par
+#include <iostream>\par
+using namespace std;\par
+\par
+int main() \{\par
+    int n;\par
+    cout << "Enter a number: ";\par
+    cin >> n;\par
+    for (int i = 2; i <= n; i++) \{\par
+        bool prime = true;\par
+        for (int j = 2; j * j <= i; j++) \{\par
+            if (i % j == 0) \{\par
+                prime = false;\par
+                break;\par
+            \}\par
+        \}\par
+        if (prime) \{\par
+            cout << i << " ";\par
+        \}\par
+    \}\par
+    return 0;\par
+\}\line\par
+
+\pard\sa200\sl276\slmult1\qc\ul\b\fs24 Lab 3 Assignments\par
+
+\pard\sa200\sl276\slmult1\ulnone\b0\fs22\par
+1:Write a program to create an array of integers and perform following operations on that array like finding the sum, average, maximum and minimum number in that array. Accept the numbers of the array from user. \par
+#include <iostream>\par
+using namespace std;\par
+int main() \{\par
+    int n1;\par
+    cout<<"Enter the size of array: ";\par
+    cin>>n1;\par
+    int arr[n1];\par
+    int sum=0,min,max;\par
+    char choice;\par
+    \par
+    cout<<"Enter your choice from given below"<<endl;\par
+    cout<<" a. Sum of numbers in an array.\\n b. Average of numbers in an array.\\n c. Find maximum and minimum number in the array.\\n d. Enter the values in an array.\\n e.Print the values in array.\\n";\par
+    do\par
+    \{\par
+        cout<<"\\nEnter choice: ";\par
+        cin>>choice;\par
+        switch (choice)\par
+        \{\par
+        case 'a':\par
+        for (int i = 0; i < n1; i++)\par
+        \{\par
+            sum += arr[i];\par
+        \}\par
+        cout << "\\nSum of elements: " << sum << endl;\par
+        \par
+        break;\par
+        case 'b':\par
+            for (int i = 0; i < n1; i++)\par
+            \{\par
+                sum += arr[i];\par
+            \}\par
+            cout << "\\nAverage of elements: " << (sum / n1) << endl;\par
+            break;\par
+        case 'c':\par
+            min=arr[1], max=arr[1];\par
+            for (int i = 0; i < n1; i++)\par
+            \{\par
+                if (arr[i]<min)\par
+                \{\par
+                    min=arr[i];\par
+                \}\par
+                else if (arr[i]>max)\par
+                \{\par
+                    max=arr[i];\par
+                \}\par
+                else if (arr[i]==min || arr[i]==max)\par
+                \{\par
+                    continue;\par
+                \}\par
+                \par
+                \par
+            \}\par
+            cout<<"Max ="<<max<<" "<<"Min ="<<min;\par
+            \par
+            \par
+            break;\par
+        case 'd':\par
+        \par
+            for (int i = 0; i < n1; i++)\par
+            \{\par
+            \par
+                \par
+                cin>>arr[i];\par
+            \}\par
+\par
+            cout<<"\\nElement entry has been completed";\par
+\par
+            break;\par
+        case 'e':\par
+                for (int i = 0; i < n1; i++)\par
+                \{\par
+                    cout<<arr[i]<<" ";\par
+                \}\par
+            break;\par
+        \par
+        default:\par
+        cout<<"\\nInvalid Input";\par
+            break;\par
+        \}\par
+    \} while (choice!='o');\par
+    \par
+    return 0;\par
+\}\par
+\par
+2: Write a program to Accept a number and display its sum of digits.:ex 568    5+6+8\par
+#include <iostream>\par
+using namespace std;\par
+int main() \{\par
+    int num;\par
+    cout<<"Enter a number: ";\par
+    cin>>num;\par
+    int sum=0;\par
+    while (num!=0)\par
+    \{\par
+        sum+=num%10;\par
+        num=num/10;\par
+    \}\par
+    cout<<"sum is "<<sum;\par
+    return 0;\par
+\}\par
+\par
+3:. Write a  program to find sum of all even and odd numbers between 1 to n. \par
+#include <iostream>\par
+using namespace std;\par
+int main() \{\par
+    int limit, even_sum=0, odd_sum=0;\par
+    cout<<"Enter the limit: ";\par
+    cin>>limit;\par
+    for (int i = 1; i <= limit; i++)\par
+    \{\par
+        if (i%2==0)\par
+        \{\par
+            even_sum=even_sum+i;\par
+        \}\par
+        else\{\par
+            odd_sum+=i;\par
+        \}\par
+        \par
+    \}\par
+    cout<<"Even sum is: "<<even_sum<<" "<<"Odd sum is: "<<odd_sum;\par
+        \par
+    return 0;\par
+\}\par
+\par
+4:. Write a  program to print all Prime numbers between 1 to n. \par
+#include<iostream>\par
+using namespace std;\par
+int main()\{\par
+    int range;\par
+    int isPrime = 1;\par
+    cout<<"Enter a range to print the prime number series: ";\par
+    cin>>range;\par
+    for (int i = 2; i <= range-1; i++)\par
+    \{\par
+        for (int j = 2; j < i; j++)\par
+        \{\par
+            if (i%j==0)\par
+            \{\par
+                isPrime=0;\par
+                break;\par
+            \}\par
+            else\{\par
+                isPrime=1;\par
+            \}\par
+            \par
+        \}\par
+        if (isPrime==1)\par
+        \{\par
+            /* code */\par
+            cout<<i<<" ";        \par
+        \}\par
+        \par
+        \par
+    \}\par
+    \par
+    return 0;\par
+\}\par
+\par
+5:Write a program to accept array  from user .Accept number from user and search number is present in array or not.\par
+#include <iostream>\par
+using namespace std;\par
+int main() \{\par
+    int n;\par
+    int num, found=0;\par
+    cout<<"Enter the size of array: ";\par
+    cin>>n;\par
+    int arr[n];\par
+    cout<<"Enter elements: ";\par
+    for (int i = 0; i < n; i++)\par
+    \{\par
+        cin>>arr[i];\par
+    \}\par
+    cout<<"Enter num to find: ";\par
+    cin>>num;\par
+    for (int i = 0; i < n; i++)\par
+    \{\par
+        if (num==arr[i])\par
+        \{\par
+            found=1;\par
+            break;\par
+        \}\par
+    \}\par
+    if (found==1)\par
+    \{\par
+        cout<<"number is found";\par
+    \}\par
+    else\{\par
+        cout<<"number is not found";\par
+    \}\par
+    \par
+    \par
+    return 0;\par
+\}\par
+\par
+6:Write a program to print following pattern.\par
+*\par
+* *\par
+* * *\par
+* * * *\par
+* * * * *\par
+#include <iostream>\par
+using namespace std;\par
+int main() \{\par
+    int rows;\par
+    cout<<"Enter the number of rows:";\par
+    cin>>rows;\par
+    for (int i = 0; i < rows; i++)\par
+    \{\par
+        for (int j = 0; j <= i; j++)\par
+        \{\par
+            cout<<"* ";\par
+        \}\par
+        cout<<"\\n";\par
+    \}\par
+    \par
+    return 0;\par
+\}\par
+\par
+7:Write a program to create student class with data members rollno, marks1,mark2,mark3.\par
+Accept data (acceptInfo()) and display  using display member function.\par
+Also display total,percentage and grade.\par
+#include <iostream>\par
+using namespace std;\par
+\par
+class Students\par
+\{\par
+private:\par
+    int roll_no, marks1,marks2,marks3;\par
+public:\par
+    void getInfo();\par
+    void display();\par
+    void totalPercentage();\par
+    void grade();\par
+\};\par
+\par
+void Students::getInfo()\par
+\{\par
+    cout<<"Enter details: Rno., marks1, marks2, marks3";\par
+    cin>>roll_no>>marks1>>marks2>>marks3;\par
+\}\par
+void Students::display()\{\par
+    cout<<"Rollno: "<<roll_no<<"\\nmarks1: "<<marks1<<"\\nmarks2: "<<marks2<<"\\nmarks3: "<<marks3;\par
+\}\par
+\par
+void Students::totalPercentage()\{\par
+    int total=marks1+marks2+marks3;\par
+    float percentage=(total/300.0)*100;\par
+    cout<<"\\nTotal marks: "<<total<<"\\nPercentage: "<<percentage;\par
+\}\par
+\par
+void Students::grade()\{\par
+    float percentage=(marks1+marks2+marks3)/3.0;\par
+    if(percentage>=60)\par
+        cout<<"\\nGrade: A";\par
+    else if(percentage>=50)\par
+        cout<<"\\nGrade: B";\par
+    else if(percentage>=40)\par
+        cout<<"\\nGrade: C";\par
+    else\par
+        cout<<"\\nGrade: D";\par
+\}\par
+\par
+int main() \{\par
+    Students s1;\par
+    s1.getInfo();\par
+    s1.display();\par
+    s1.totalPercentage();\par
+    s1.grade();\par
+    return 0;\par
+\}\par
+}
+ 

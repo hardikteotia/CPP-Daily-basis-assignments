@@ -29,7 +29,7 @@ int main() {
         
     }
 
-    cout<<"Even count: "<<even_count<<" Odd count: "<<odd_count; 
+    cout<<"\nEven count: "<<even_count<<" Odd count: "<<odd_count; 
     
 
     return 0;

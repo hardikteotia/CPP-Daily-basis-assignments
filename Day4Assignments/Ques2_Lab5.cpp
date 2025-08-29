@@ -88,7 +88,7 @@ int main() {
     int withdraw,deposit;
     int choice;
     do{
-        cout<<"Enter choice\n1. Withdraw.\n2. Deposit\n3. To exit the program enter ""0""\n";
+        cout<<"Enter choice\n1. Withdraw.\n2. Deposit.\n3. Display Details.\n4. To exit the program enter ""0""\n";
         cin>>choice;
         switch(choice){
             case 1:

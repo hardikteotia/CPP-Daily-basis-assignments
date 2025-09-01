@@ -30,5 +30,10 @@ auto max(T& n1, T& n2){
     float c=23.4235, d=23.4236;
     auto res3 = max(c,d);
     cout<<"\nmaximun num is : "<<res3;
+    
+    char c1='A',c2='B';
+    auto res4 = max(c1,c2);
+    cout<<"\nmaximun num is : "<<res4;
+
      return 0;
  }
